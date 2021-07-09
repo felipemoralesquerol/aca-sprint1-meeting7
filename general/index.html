@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script src="js/Persona.js"></script>
+</head>
+
+<body>
+
+    <h1>Objetos</h1>
+    <h2>Abrir inspección de consola</h2>
+    <h3>Temario</h3>
+    <ol>
+        <li>Backtick o comilla invertida</li>
+        <li>Objetos usando llaves</li>
+        <li>Objetos usando Class</li>
+        <li>Modularización</li>
+        <li>POO herencia</li>
+    </ol>
+
+    <script>
+        // Objetos
+        let juan = {
+            nombre: 'juan',
+            apellido: 'diaz',
+            color_pelo: 'castaño',
+            color_ojos: 'marrones',
+            peso: 85,
+            altura: 170
+        };
+
+        let maria = {
+            nombre: 'maria',
+            apellido: 'gomez',
+            color_pelo: 'rubio',
+            color_ojos: 'verdes',
+            peso: 80,
+            altura: 170,
+            saludar: function saluda() {
+                return 'Hola soy ' + this.nombre
+            }
+        };
+
+
+        console.log("Datos de Juan y Maria: ");
+        console.log(juan);
+        console.log(maria);
+        maria.peso = 70
+        let a = juan.peso + maria.peso
+        maria.peso = 90
+        console.log(maria.saludar())
+
+        
+
+        maria2 = new Personas('Maria2', 'Gomez', 170, 1970);
+        juan2 = new Personas('Juan2', 'Diaz Garro', 180);
+        juan2.agregar_telefono('2223232323232');
+        juan2.agregar_telefono('343434343434');
+        juan2.agregar_telefono('45454545454');
+        juan2.agregar_telefono('6767676767');
+        
+        juan2.set_color_ojos('verde');
+        console.log(maria2)
+        console.log(maria2.altura_en_cm())
+        console.log(juan2.nombre_completo())
+        console.log(juan2.get_color_ojos())
+        console.log(maria2.get_color_ojos())
+        console.log(maria2.edad());
+        console.log(juan2.telefonos)
+        console.log(maria2.es_mayor())
+
+        // Agregamos a ambos objetos a un array
+        let ArrayPersonas = [];
+        ArrayPersonas.push(maria2);
+        ArrayPersonas.push(juan2);
+        console.log(ArrayPersonas);
+
+        ArrayPersonas.forEach(element => {
+            element.nombre_completo
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     let usuario = {
+    //         nombre: 'Felipe',
+    //         apellido: 'Morales',
+    //         saludo : function () {
+    //             console.log(`Hola`);
+    //             return this.nombre;
+    //         }
+
+    //     }
+
+    //  console.log(usuario.nombre);
+    //  console.log(usuario.saludo());
+
+    //  class Usuario extends Object {
+    //      constructor (nombre, apellido) {
+    //          super();
+    //          this.nombre = nombre;
+    //          this.apellido = apellido;
+    //          this.altura = 0
+    //          this.saludar = () => this.altura +2;       
+    //      }
+    // }
+
+
+
+    //  let felipe = new Usuario('felipe', 'morales');
+    //  console.log(felipe.nombre + felipe.saludar());
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
